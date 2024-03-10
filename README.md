@@ -7,7 +7,7 @@ docker ps
 kubectl get all -n kube-system 
 ```
 
-Task 2
+Task 2: Deploy mysql and app pod
 
 ```
 kubectl get namespaces
@@ -29,6 +29,8 @@ kubectl apply -f app_pod.yaml -n webapp
 ```
 kubectl get all pods -n webapp
 ```
+a.	Can both applications listen on the same port inside the container? Explain your answer. 
+
 ```
 kubectl port-forward web-app 8080:8080 -n webapp
 ```
@@ -45,7 +47,7 @@ kubectl logs web-app -n webapp
 kubectl logs mysql -n database
 ```
 
-Task 3
+Task 3: Deploy the replica set
 ```
 kubectl apply -f mysql_replicaset.yaml -n database
 ```
@@ -58,6 +60,8 @@ kubectl get all  -n webapp
 ```
 kubectl get all  -n database
 ```
+Q: Is the pod created in step 2 governed by the ReplicaSet you created.
+
 add the selector to the pod manifest
 ```
 mysql-service.database.svc.cluster.local
