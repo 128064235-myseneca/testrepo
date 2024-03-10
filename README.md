@@ -1,6 +1,17 @@
 Task 1:
+show the k8 cluster
+```
+docker ps
+```
+```
+kubectl get all -n kube-system 
+```
 
 Task 2
+
+```
+kubectl get namespaces
+```
 ```
 kubectl apply -f mysql_pod.yaml -n database
 ```
